@@ -40,17 +40,17 @@ features <- read.table("UCI HAR Dataset/features.txt",
                        header=F, stringsAsFactors = F)
 
 # Indices for features containing text mean and std 
-#i1 <- grep("mean", features$V2)
-#i2 <- grep("std", features$V2)
-#index <- c(i1, i2)
+# As indicated by features_info.txt, only those feaures 
+# ending with mean() and std() are relevant here
 features2 <- 
     features %>%
-    filter(grepl("mean", V2) | grepl("std", V2)) #grepl is like grep but returns logical
+    filter(grepl("mean()", V2, fixed = T) | 
+           grepl("std()", V2, fixed = T)) #grepl is like grep but returns logical
 index <- features2$V1
 
 alldata2 <- alldata[,index]
 
-# Index will be used later to specify the descriptive column names (Step 4)
+# index will be used later to specify the descriptive column names (Step 4)
 
 
 # ==============================================================================
@@ -59,6 +59,7 @@ alldata2 <- alldata[,index]
 # Merge all the train and text activities and subjects together
 allactivities <- rbind(trainlab, testlab)
 allsubjects <- rbind(trainwho, testwho) # Subjects for use later (Step 5)
+allsubjects <- as.factor(allsubjects$V1) # Convert subjects to factors
 
 # Load activity data set
 activities <- read.table("UCI HAR Dataset/activity_labels.txt", header=F)
@@ -66,7 +67,7 @@ activities <- read.table("UCI HAR Dataset/activity_labels.txt", header=F)
 # Subset one onto the other to get a list with descriptive activity names
 allactivities <- activities$V2[allactivities$V1]
 
-# Merge this onto the main data table
+# Merge this onto the main data table, include subjects as well (for Step 5)
 alldata2 <- cbind(alldata2, allactivities, allsubjects)
 
 
@@ -80,21 +81,23 @@ cnames1 <- c(cnames1, 'activity', 'subject')
 # Replace original column names (V1, V2, etc) with the descriptive names
 names(alldata2) <- cnames1
 
+
 # ==============================================================================
 # 5. Create independent tidy data set with the average of each variable 
 #    for each activity and each subject
 
-# Columns to average
-col_start <- cnames1[1]
-col_end <- cnames1[length(cnames1)-2]
-    
+# summarise_each in dplyr makes it easy (note spelling: there is no summarize_each)
 alldata3 <-
     alldata2 %>%
     group_by(activity, subject) %>%
-    summarize(mean(col_start:col_end))
+    summarise_each(funs(mean)) # apply function mean to each column after grouping
 
 # Output table to a file
 
+
+# Generate codebook.md
+
+
 # Clean up environment
-#rm(trainwho, testwho, trainlab, testlab, alldata, 
-#allactivies, activities, features, features2)
+rm(trainwho, testwho, trainlab, testlab, alldata, index, allsubjects, cnames1, 
+   allactivities, activities, features, features2)
