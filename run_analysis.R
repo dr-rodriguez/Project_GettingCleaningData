@@ -78,6 +78,15 @@ alldata2 <- cbind(alldata2, allactivities, allsubjects)
 cnames1 <- features$V2[index]
 cnames1 <- c(cnames1, 'activity', 'subject')
 
+# Cleaning up some of the names by eliminating () and extra dashes
+my_replace <- function(x) {
+    x <- gsub('mean()', 'Mean', x, fixed=T) 
+    x <- gsub('std()','Std',x, fixed=T) 
+    x <- gsub('-','_',x) 
+    x
+}
+cnames1 <- sapply(cnames1, my_replace, USE.NAMES = F)
+
 # Replace original column names (V1, V2, etc) with the descriptive names
 names(alldata2) <- cnames1
 
@@ -93,8 +102,7 @@ alldata3 <-
     summarise_each(funs(mean)) # apply function mean to each column after grouping
 
 # Output table to a file
-
-
+write.table(alldata3, file="tidy_data.txt", row.name=FALSE)
 
 # Clean up environment
 rm(trainwho, testwho, trainlab, testlab, alldata, index, allsubjects, cnames1, 
