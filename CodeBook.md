@@ -177,12 +177,12 @@ Average of the standard deviation measurement of the magnitude of the signal fro
 Units: g
 
 ### tBodyAccJerkMag_Mean
-Average of the mean measurement of the jerk of the signal from the body accelerometer.
+Average of the mean measurement of the magnitude of the jerk of the signal from the body accelerometer.
 
 Units: g
 
 ### tBodyAccJerkMag_Std
-Average of the standard deviation measurement of the jerk of the signal from the body accelerometer.
+Average of the standard deviation measurement of the magnitude of the jerk of the signal from the body accelerometer.
 
 Units: g
 
@@ -197,12 +197,12 @@ Average of the standard deviation measurement of the magnitude of the signal fro
 Units: radians/sec
 
 ### tBodyGyroJerkMag_Mean
-Average of the mean measurement of the jerk of the signal from the body gyroscope.
+Average of the mean measurement of the magnitude of the jerk of the signal from the body gyroscope.
 
 Units: radians/sec
 
 ### tBodyGyroJerkMag_Std
-Average of the standard deviation measurement of the jerk of the signal from the body gyroscope.
+Average of the standard deviation measurement of the magnitude of the jerk of the signal from the body gyroscope.
 
 Units: radians/sec
 
@@ -307,12 +307,12 @@ Average of the standard deviation measurement of the Fourier transform of the ma
 Units: g
 
 ### fBodyBodyAccJerkMag_Mean
-Average of the mean measurement of the Fourier transform of the jerk of the signal from the body-body accelerometer.
+Average of the mean measurement of the Fourier transform of the magnitude of the jerk of the signal from the body-body accelerometer.
 
 Units: g
 
 ### fBodyBodyAccJerkMag_Std
-Average of the standard deviation measurement of the Fourier transform of the jerk of the signal from the body-body accelerometer.
+Average of the standard deviation measurement of the Fourier transform of the magnitude of the jerk of the signal from the body-body accelerometer.
 
 Units: g
 
@@ -327,12 +327,12 @@ Average of the standard deviation measurement of the Fourier transform of the ma
 Units: radians/sec
 
 ### fBodyBodyGyroJerkMag_Mean
-Average of the mean measurement of the Fourier transform of the jerk of the signal from the body-body gyroscope.
+Average of the mean measurement of the Fourier transform of the magnitude of the jerk of the signal from the body-body gyroscope.
 
 Units: radians/sec
 
 ### fBodyBodyGyroJerkMag_Std
-Average of the standard deviation measurement of the Fourier transform of the jerk of the signal from the body-body gyroscope.
+Average of the standard deviation measurement of the Fourier transform of the magnitude of the jerk of the signal from the body-body gyroscope.
 
 Units: radians/sec
 

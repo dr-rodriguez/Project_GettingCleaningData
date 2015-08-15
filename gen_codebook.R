@@ -23,7 +23,9 @@ desc_name <- function(x) {
         'Fourier transform of the ' else ''
     
     # Check for relevant strings to construct parts of the final string
-    txt2 <- if(grepl('Jerk',x)) {
+    txt2 <- if(grepl('JerkMag',x)) {
+        'magnitude of the jerk of the '
+    } else if(grepl('Jerk',x)) {
         'jerk of the '
     } else if(grepl('Mag',x)) {
         'magnitude of the '
