@@ -95,8 +95,6 @@ alldata3 <-
 # Output table to a file
 
 
-# Generate codebook.md
-
 
 # Clean up environment
 rm(trainwho, testwho, trainlab, testlab, alldata, index, allsubjects, cnames1, 
