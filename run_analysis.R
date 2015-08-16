@@ -106,4 +106,4 @@ write.table(alldata3, file="tidy_data.txt", row.name=FALSE)
 
 # Clean up environment
 rm(trainwho, testwho, trainlab, testlab, alldata, index, allsubjects, cnames1, 
-   allactivities, activities, features, features2)
+   allactivities, activities, features, features2, my_replace)

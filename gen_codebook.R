@@ -32,7 +32,7 @@ desc_name <- function(x) {
     } else ''
     
     stype <- if(grepl('BodyBody',x)) {
-        'body-body'
+        'body'
     } else if(grepl('Gravity',x)) {
         'gravity'
     } else if(grepl('Body',x)) {
@@ -78,7 +78,7 @@ for(i in seq_along(cnames)) {
           txt1 <- desc_name(cnames[i])
           units <- if(grepl('Gyro',cnames[i])) {
               'radians/sec'
-          } else 'g'
+          } else 'g (9.81 m/sec^2)'
           txt1 <- paste0(txt1, '\n\nUnits: ', units)
       }
         
@@ -92,3 +92,6 @@ for(i in seq_along(cnames)) {
 # ====================================================================
 # Output to the md file
 cat(maintxt, file='CodeBook.md')
+
+# Clear environment
+rm(i, desc_name, units, txt1, maintxt, cnames)
