@@ -8,7 +8,7 @@ This set of scripts loads up data from the Human Activity Recognition Using Smar
 These are the steps performed by run_analysis.R
 * Loads up the various data tables pertaining to the training and testing sets.
 * Merges the train and test datasets together by row. This is the measurement table.
-* Filters out unneeded columns by referencing the features.txt file. Only rows denoting the mean (ending in mean()) or standard deviation (ending in std()) are retained.
+* Filters out unneeded columns by referencing the features.txt file. Only rows denoting the mean (contains mean()) or standard deviation (contains std()) are retained.
 * Processes the subject and activity tables by merging the train and test sets (by row) and subsetting activity_labels.txt with the the activity table to get meaningful activity names (eg, WALKING).
 * Merges the filtered measurement table with the subject and activity tables by column.
 * Uses information from features.txt (with some simplyfing substitutions) to create meaningful column names.

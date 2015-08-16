@@ -42,7 +42,7 @@ features <- read.table("UCI HAR Dataset/features.txt",
 
 # Indices for features containing text mean and std 
 # As indicated by features_info.txt, only those feaures 
-# ending with mean() and std() are relevant here
+# with mean() and std() are relevant here
 features2 <- 
     features %>%
     filter(grepl("mean()", V2, fixed = T) | grepl("std()", V2, fixed = T))
