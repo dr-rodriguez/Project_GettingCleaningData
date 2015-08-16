@@ -1,4 +1,5 @@
 # Script to run the analysis on the data and return a tidy data set
+# See README.md for more details
 
 # Load up packages
 library(dplyr)
@@ -26,7 +27,7 @@ print('Read complete.')
 
 
 # ==============================================================================
-# 1. Merge the training and test data sets
+# 1. Merge the training and test data sets by row
 alldata <- rbind(trainset, testset)
 rm(testset, trainset) # clean up and delete the original data sets
 
@@ -44,8 +45,7 @@ features <- read.table("UCI HAR Dataset/features.txt",
 # ending with mean() and std() are relevant here
 features2 <- 
     features %>%
-    filter(grepl("mean()", V2, fixed = T) | 
-           grepl("std()", V2, fixed = T)) #grepl is like grep but returns logical
+    filter(grepl("mean()", V2, fixed = T) | grepl("std()", V2, fixed = T))
 index <- features2$V1
 
 alldata2 <- alldata[,index]
