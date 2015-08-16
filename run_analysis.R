@@ -83,6 +83,7 @@ my_replace <- function(x) {
     x <- gsub('mean()', 'Mean', x, fixed=T) 
     x <- gsub('std()','Std',x, fixed=T) 
     x <- gsub('-','_',x) 
+    x <- gsub('BodyBody','Body',x) # correction for erronous Body twice in name
     x
 }
 cnames1 <- sapply(cnames1, my_replace, USE.NAMES = F)

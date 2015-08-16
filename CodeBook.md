@@ -306,32 +306,32 @@ Average of the standard deviation measurement of the Fourier transform of the ma
 
 Units: g (9.81 m/sec^2)
 
-### fBodyBodyAccJerkMag_Mean
+### fBodyAccJerkMag_Mean
 Average of the mean measurement of the Fourier transform of the magnitude of the jerk of the signal from the body accelerometer.
 
 Units: g (9.81 m/sec^2)
 
-### fBodyBodyAccJerkMag_Std
+### fBodyAccJerkMag_Std
 Average of the standard deviation measurement of the Fourier transform of the magnitude of the jerk of the signal from the body accelerometer.
 
 Units: g (9.81 m/sec^2)
 
-### fBodyBodyGyroMag_Mean
+### fBodyGyroMag_Mean
 Average of the mean measurement of the Fourier transform of the magnitude of the signal from the body gyroscope.
 
 Units: radians/sec
 
-### fBodyBodyGyroMag_Std
+### fBodyGyroMag_Std
 Average of the standard deviation measurement of the Fourier transform of the magnitude of the signal from the body gyroscope.
 
 Units: radians/sec
 
-### fBodyBodyGyroJerkMag_Mean
+### fBodyGyroJerkMag_Mean
 Average of the mean measurement of the Fourier transform of the magnitude of the jerk of the signal from the body gyroscope.
 
 Units: radians/sec
 
-### fBodyBodyGyroJerkMag_Std
+### fBodyGyroJerkMag_Std
 Average of the standard deviation measurement of the Fourier transform of the magnitude of the jerk of the signal from the body gyroscope.
 
 Units: radians/sec
